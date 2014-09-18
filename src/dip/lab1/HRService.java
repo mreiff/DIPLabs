@@ -21,10 +21,10 @@ public class HRService {
      * Alternatively to the above, we could use an enum. Does this improve
      * type safety?
      */
-    public enum WageType {
-        SALARIED,
-        HOURLY
-    }
+//    public enum WageType {
+//        SALARIED,
+//        HOURLY
+//    }
 
     private static final String ERROR_MSG =
             "Cannot get annual wages because no valid employee type provided";

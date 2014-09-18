@@ -12,6 +12,11 @@ package dip.lab1;
  */
 public interface Employee {
     
+    public static enum WageType {
+        SALARIED,
+        HOURLY
+    }
+    
     public abstract double getAnnualWages();
     
 }
