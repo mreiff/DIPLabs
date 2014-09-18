@@ -10,6 +10,36 @@ package dip.lab2;
  *
  * @author mreiff
  */
-public class TipManager {
+public class TipManager implements TipCalculator{
+    
+    private TipCalculator calculator;
+    
+    public TipManager(){
+    }
+
+    public void createBaggageServiceCalculator(ServiceQuality q, int bags){
+        calculator = new BaggageServiceTipCalculator(q, bags);
+    }
+    
+    public void createFoodServiceCalculator(ServiceQuality q, double billAmt){
+        calculator = new FoodServiceTipCalculator(q, billAmt);
+    }
+    
+    @Override
+    public double getTip() {
+        return calculator.getTip();
+    }
+
+    @Override
+    public ServiceQuality getServiceQuality() {
+        return calculator.getServiceQuality();
+    }
+
+    @Override
+    public void setServiceRating(ServiceQuality q) {
+        calculator.setServiceRating(q);
+    }
+    
+    
     
 }

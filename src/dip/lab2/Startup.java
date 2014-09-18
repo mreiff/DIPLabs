@@ -1,9 +1,7 @@
 package dip.lab2;
 
-// An useful import if you need it.
-import java.text.NumberFormat;
-// Another useful import if you need it.
-import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
+
 
 /**
  * Just a test class for input and output.
@@ -19,13 +17,19 @@ import javax.swing.JOptionPane;
  * @author your name goes here
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
  
     public static void main(String[] args) {
         
+        TipManager manager = new TipManager();
+        DecimalFormat df = new DecimalFormat("$#,###.00");
         
+        // Represent Baggage Service
+        manager.createBaggageServiceCalculator(ServiceQuality.POOR, 100000000);
+        System.out.println(df.format(manager.getTip()));
+        
+        // represent food service
+        manager.createFoodServiceCalculator(ServiceQuality.GOOD, 15000.86);
+        System.out.println(df.format(manager.getTip()));
     }
 
 }
