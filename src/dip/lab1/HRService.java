@@ -38,7 +38,7 @@ public class HRService {
      * Are there other options? Hint: enum
      * @return the annual compensation for supported employee types
      */
-    public double getAnnualCompensationForEmployee(Employee e,
+    public double getAnnualCompensationForEmployee(SalariedEmployee e,
             String employeeType)
     {
         double annualCompensation = 0;
@@ -77,7 +77,7 @@ public class HRService {
             annualCompensation = e.getAnnualWages();
 
         } else if(e instanceof SalariedEmployee) {
-            annualCompensation = e.getAnnualSalary();
+            annualCompensation = e.getAnnualWages();
 
         } else {
             JOptionPane.showMessageDialog(

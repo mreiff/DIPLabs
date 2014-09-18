@@ -6,10 +6,15 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee implements Employee {
+    
+    private double hourlyRate;
+    private double totalHrsForYear;
     
     /** default constructor. Is this the best way to go? */
-    public HourlyEmployee() {}
+    public HourlyEmployee() {
+        
+    }
 
     /**
      * Convenience constructor. Is this the best way to go?
@@ -19,6 +24,31 @@ public class HourlyEmployee extends Employee {
     public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
         setHourlyRate(hourlyRate);
         setTotalHrsForYear(totalHrsForYear);
+    }
+
+    private void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;//should be validated
+    }
+
+    private void setTotalHrsForYear(double totalHrsForYear) {
+        this.totalHrsForYear = totalHrsForYear;//should be validated
+    }
+
+    public double getTotalHrsForYear() {
+        return totalHrsForYear;
+    }
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public double getAnnualWages(){
+        return hourlyRate * totalHrsForYear;
     }
 
 }

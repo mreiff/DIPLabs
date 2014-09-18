@@ -6,10 +6,15 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class SalariedEmployee extends Employee {
-
+public class SalariedEmployee implements Employee {
+    
+    private double annualSalary;
+    private double annualBonus;
+    
     /** default constructor. Is this the best way to go? */
-    public SalariedEmployee() {}
+    public SalariedEmployee() {
+        
+    }
 
     /**
      * Convenience constructor. Is this the best way to go?
@@ -21,5 +26,25 @@ public class SalariedEmployee extends Employee {
         setAnnualBonus(annualBonus);
     }
 
+    private void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;//should be validated
+    }
+
+    private void setAnnualBonus(double annualBonus) {
+        this.annualBonus = annualBonus;//should be validated
+    }
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public double getAnnualWages() {
+        return annualSalary + annualBonus;
+    }
+
+    public double getAnnualSalary() {
+        return annualSalary;
+    }
     
 }
