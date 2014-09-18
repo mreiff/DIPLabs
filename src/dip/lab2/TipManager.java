@@ -39,6 +39,16 @@ public class TipManager implements TipCalculator{
     public void setServiceRating(ServiceQuality q) {
         calculator.setServiceRating(q);
     }
+/*
+    public TipCalculator getCalculator() {
+        return calculator;
+    }
+
+    public void setCalculator(TipCalculator calculator) {
+        this.calculator = calculator;
+    }
+    Made these just incase they are needed. Commented because I am unsure of this
+    and it doesn't damage my code without it.*/
     
     
     

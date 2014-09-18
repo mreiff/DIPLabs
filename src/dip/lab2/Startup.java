@@ -24,11 +24,11 @@ public class Startup {
         DecimalFormat df = new DecimalFormat("$#,###.00");
         
         // Represent Baggage Service
-        manager.createBaggageServiceCalculator(ServiceQuality.POOR, 100000000);
+        manager.createBaggageServiceCalculator(ServiceQuality.POOR, 1000);
         System.out.println(df.format(manager.getTip()));
         
-        // represent food service
-        manager.createFoodServiceCalculator(ServiceQuality.GOOD, 15000.86);
+        // Represent Food Service
+        manager.createFoodServiceCalculator(ServiceQuality.GOOD, 1500.86);
         System.out.println(df.format(manager.getTip()));
     }
 
